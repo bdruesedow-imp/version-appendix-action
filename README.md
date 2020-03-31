@@ -25,7 +25,7 @@ This action creates an appendix to a semantic version depending on the current b
 ## Example usage
 
 ```
-uses: bdruesedow/version-appendix-action@master
+uses: bdruesedow-imp/version-appendix-action@master
 id: appendix-action
 with:
   github-ref: ${{ github.ref }}
