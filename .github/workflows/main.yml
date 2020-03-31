@@ -14,6 +14,6 @@ jobs:
         id: appendix-creation
         with:
           github_ref: ${{ github.ref }}
-          github_run_number: ${{ github.run_number }} 
+          github_run_number: ${{ github.run_number }}
       - name: Get the output time
         run: echo "The appendix is ${{ steps.appendix-creation.outputs.appendix }}"

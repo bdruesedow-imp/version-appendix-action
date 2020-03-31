@@ -1,5 +1,5 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Version Appendix'
+description: 'Create an version appendix based on current branch and run number.'
 inputs:
   github_ref:
     description: 'Current github ref (GITHUB_REF)'
@@ -9,7 +9,7 @@ inputs:
     required: true
 outputs:
   appendix:
-    description: 'Version appendix'
+    description: 'Created version appendix'
 runs:
   using: 'ubuntu-latest'
   main: 'versioning.js'
