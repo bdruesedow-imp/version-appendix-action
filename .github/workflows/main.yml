@@ -1,0 +1,19 @@
+name: Test
+
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to test the local action.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Version appendix in action
+        uses: ./ # Uses an action in the root directory
+        id: appendix-creation
+        with:
+          github_ref: ${{ github.ref }}
+          github_run_number: ${{ github.run_number }} 
+      - name: Get the output time
+        run: echo "The appendix is ${{ steps.appendix-creation.outputs.appendix }}"
