@@ -9,11 +9,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Version appendix in action
-        uses: ./ # Uses an action in the root directory
-        id: appendix-creation
+      - name: Get version appendix
+        uses: bdruesedow/version-appendix-action@master
+        id: appendix-action
         with:
           github-ref: ${{ github.ref }}
           github-run-number: ${{ github.run_number }}
-      - name: Get the output time
-        run: echo "The appendix is ${{ steps.appendix-creation.outputs.appendix }}"
+
+      - name: Get the version to variable
+        run: |
+          echo ::set-env name=APPENDIX::${{ steps.appendix-action.outputs.appendix }}
