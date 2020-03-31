@@ -9,7 +9,7 @@ try {
   console.log("Ref:", ref);
 
   const branchName = ref.split("/").slice(-1).toString();
-  console.log("Branch:", branch);
+  console.log("Branch:", branchName);
 
   var apppendix;
 
@@ -33,7 +33,7 @@ try {
       appendix = "SNAPSHOT-" + branchName + "." + buildNr;
       break;
   }
- 
+
   console.log(appendix);
   core.setOutput("appendix", appendix);
 
