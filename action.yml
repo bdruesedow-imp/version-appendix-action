@@ -1,5 +1,5 @@
-name: 'Version Appendix'
-description: 'Create an version appendix based on current branch and run number.'
+name: 'Version appendix action'
+description: 'Create an appendix to a semantic version based on current branch and run number.'
 inputs:
   github_ref:
     description: 'Current github ref (GITHUB_REF)'

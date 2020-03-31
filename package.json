@@ -1,0 +1,12 @@
+{
+    "name": "version-appendix-action",
+    "description": "This github actions creates an appendix to a semantic version. This appenix is based on the current branch and github run number.",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/bdruesedow/version-appendix-action.git"
+    },
+    "dependencies": {
+        "@actions/core": "^1.2.3",
+        "@actions/github": "^2.1.1"
+    }
+}
