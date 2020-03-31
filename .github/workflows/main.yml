@@ -19,3 +19,5 @@ jobs:
       - name: Get the version to variable
         run: |
           echo ::set-env name=APPENDIX::${{ steps.appendix-action.outputs.appendix }}
+      - name: Print the appendix
+        run: echo ${{ env.APPENDIX }}
