@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Get version appendix
-        uses: bdruesedow/version-appendix-action@v1
+        uses: bdruesedow-imp/version-appendix-action@master
         id: appendix-action
         with:
           github-ref: ${{ github.ref }}
