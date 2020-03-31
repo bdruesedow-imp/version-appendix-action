@@ -3,9 +3,9 @@ const github = require('@actions/github');
 
 try {
 
-  const ref = core.getInput('github_ref');
+  const ref = core.getInput('github-ref');
 
-  const buildNr = core.getInput('github_run_number');
+  const buildNr = core.getInput('github-run-number');
   console.log("Ref:", ref);
 
   const branchName = ref.split("/").slice(-1).toString();
