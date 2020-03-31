@@ -11,5 +11,5 @@ outputs:
   appendix:
     description: 'Created version appendix'
 runs:
-  using: 'ubuntu-latest'
+  using: 'node12'
   main: 'versioning.js'
