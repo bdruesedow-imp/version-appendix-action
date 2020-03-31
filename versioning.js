@@ -33,7 +33,7 @@ try {
       appendix = "SNAPSHOT-" + branchName + "." + buildNr;
       break;
   }
-
+ 
   console.log(appendix);
   core.setOutput("appendix", appendix);
 
