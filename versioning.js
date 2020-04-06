@@ -4,12 +4,14 @@ const github = require('@actions/github');
 try {
 
   const ref = core.getInput('github-ref');
-  const buildNr = core.getInput('github-run-number');
-  const useRunNumber = core.getInput('use-run-number');
   const branchName = ref.split("/").slice(-1).toString();
-  
-  console.log("Ref: ", ref);
-  console.log("Branch: ", branchName);
+  const runNumber = core.getInput('github-run-number');
+  const useRunNumber = core.getInput('use-run-number');
+
+  console.log("ref: ", ref);
+  console.log("branchName: ", branchName);
+  console.log("runNumber: ", runNumber);
+  console.log("useRunNumber: ", useRunNumber);
 
   var apppendix;
 
@@ -35,7 +37,8 @@ try {
   }
 
   if (useRunNumber == true) {
-      appendix = appendix + "." + buildNr;
+      console.log("Add runNumber...");
+      appendix = appendix + "." + runNumber;
   }
 
   console.log(appendix);
