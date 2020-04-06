@@ -14,7 +14,6 @@ jobs:
         id: appendix-action
         with:
           github-ref: ${{ github.ref }}
-          github-run-number: ${{ github.run_number }}
 
       - name: Get the version to variable
         run: |

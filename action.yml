@@ -5,8 +5,8 @@ inputs:
     description: 'Current github ref (GITHUB_REF)'
     required: true
   github_run_number:
-    description: 'Current github run number (GITHUB_RUN_NUMBER)'
-    required: true
+    description: 'Current github run number (GITHUB_RUN_NUMBER)' # will be removed soon
+    required: false
 outputs:
   appendix:
     description: 'Created version appendix'
