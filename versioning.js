@@ -4,14 +4,11 @@ const github = require('@actions/github');
 try {
 
   const ref = core.getInput('github-ref');
-
   const buildNr = core.getInput('github-run-number');
-  console.log("Ref: ", ref);
-
   const useRunNumber = core.getInput('use-run-number');
-  console.log("Use run number: ", useRunNumber);
-
   const branchName = ref.split("/").slice(-1).toString();
+  
+  console.log("Ref: ", ref);
   console.log("Branch: ", branchName);
 
   var apppendix;
