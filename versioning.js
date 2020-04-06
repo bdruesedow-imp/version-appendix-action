@@ -4,10 +4,14 @@ const github = require('@actions/github');
 try {
 
   const ref = core.getInput('github-ref');
-  console.log("Ref:", ref);
-
   const branchName = ref.split("/").slice(-1).toString();
-  console.log("Branch:", branchName);
+  const runNumber = core.getInput('github-run-number');
+  const useRunNumber = core.getInput('use-run-number');
+
+  console.log("ref: ", ref);
+  console.log("branchName: ", branchName);
+  console.log("runNumber: ", runNumber);
+  console.log("useRunNumber: ", useRunNumber);
 
   var apppendix;
 
@@ -25,11 +29,16 @@ try {
       appendix = "RC-" + branchName;
       break;
     case (ref.endsWith("develop")):
-      appendix = "SNAPSHOT." + buildNr;
+      appendix = "SNAPSHOT";
       break;
     default:
       appendix = "SNAPSHOT-" + branchName;
       break;
+  }
+
+  if (useRunNumber == "true") {
+      console.log("Add runNumber...");
+      appendix = appendix + "." + runNumber;
   }
 
   console.log(appendix);

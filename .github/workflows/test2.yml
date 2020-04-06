@@ -1,0 +1,24 @@
+name: Test2
+
+on: [push]
+
+jobs:
+  test-version-appendix:
+    runs-on: ubuntu-latest
+    name: A job to test the local action.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get version appendix
+        uses: bdruesedow-imp/version-appendix-action@develop
+        id: appendix-action
+        with:
+          github-ref: ${{ github.ref }}
+          github-run-number: ${{ github.run_number }}
+          use-run-number: true
+
+      - name: Get the version to variable
+        run: |
+          echo ::set-env name=APPENDIX::${{ steps.appendix-action.outputs.appendix }}
+      - name: Print the appendix
+        run: echo ${{ env.APPENDIX }}
