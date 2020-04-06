@@ -1,12 +1,16 @@
 name: 'Version appendix action'
 description: 'Create an appendix to a semantic version based on current branch and run number.'
 inputs:
-  github_ref:
+  github-ref:
     description: 'Current github ref (GITHUB_REF)'
     required: true
-  github_run_number:
+  github-run_number:
     description: 'Current github run number (GITHUB_RUN_NUMBER)' # will be removed soon
     required: false
+  use-run-number:
+    description: "true: append run number, false: do not append run number"
+    required: false
+    default: false
 outputs:
   appendix:
     description: 'Created version appendix'
