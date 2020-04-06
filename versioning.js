@@ -36,7 +36,7 @@ try {
       break;
   }
 
-  if (useRunNumber.equals(true)) {
+  if (useRunNumber == true) {
       console.log("Add runNumber...");
       appendix = appendix + "." + runNumber;
   }
