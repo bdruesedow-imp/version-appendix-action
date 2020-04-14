@@ -21,7 +21,7 @@ try {
       appendix = "RELEASE";
       break;
     // only when release branch without additional branch name
-    case (ref.endsWith("release")):
+    case (ref.endsWith("/release")):
       appendix = "RC";
       break;
     // release with additional branch name e.g. "/release/2020-03"
