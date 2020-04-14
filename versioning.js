@@ -17,7 +17,7 @@ try {
 
   switch(true) {
     // master branch only
-    case (ref.endsWith("master")):
+    case (ref.endsWith("/master")):
       appendix = "RELEASE";
       break;
     // only when release branch without additional branch name
@@ -28,7 +28,7 @@ try {
     case (ref.includes("/release/")):
       appendix = "RC-" + branchName;
       break;
-    case (ref.endsWith("develop")):
+    case (ref.endsWith("/develop")):
       appendix = "SNAPSHOT";
       break;
     default:
